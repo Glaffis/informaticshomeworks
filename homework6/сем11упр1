@@ -1,0 +1,35 @@
+import unittest
+from сем3упр2.py import div
+
+
+class TestDivFunction(unittest.TestCase):
+
+    def test_prime_numbers(self):
+        self.assertEqual(div(3), [3])
+        self.assertEqual(div(7), [7])
+        self.assertEqual(div(13), [13])
+
+    def test_composite_numbers(self):
+        self.assertEqual(div(12), [2, 2, 3])
+        self.assertEqual(div(100), [2, 2, 5, 5])
+
+    def test_square_numbers(self):
+        self.assertEqual(div(9), [3, 3])
+        self.assertEqual(div(16), [4, 4])
+        self.assertEqual(div(25), [5, 5])
+
+    def test_inverse(self):
+        for i in [1, 2, 6, 12, 30, 97, 100]:
+            f = div(n)
+            final = 1
+            for j in factors:
+                final *= j
+            self.assertEqual(final, i, f"Для i={i} произведение {f} ≠ {i}")
+
+    def test_numbers(self):
+        result = div(18)
+        self.assertIsInstance(result, list)
+        for i in result:
+            self.assertIsInstance(i, int)
+if __name__ == '__main__':
+    unittest.main()
